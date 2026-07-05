@@ -18,11 +18,6 @@ export default function Education() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           {/* M.Tech Card - Prominent (span 7) */}
           <div className="lg:col-span-7 p-8 rounded-3xl glass glow-card border border-slate-800 flex flex-col justify-between group relative overflow-hidden h-full">
-            {/* Massive Background Year Graphic */}
-            <div className="absolute -right-6 -bottom-10 text-[9rem] sm:text-[12rem] font-black text-slate-900/15 group-hover:text-slate-900/25 select-none pointer-events-none font-sans transition-colors duration-500">
-              2026
-            </div>
-
             <div className="relative z-10">
               <div className="flex items-center justify-between mb-8">
                 <div className="p-3.5 rounded-2xl bg-white text-slate-950 shadow-lg shadow-white/5">
@@ -59,11 +54,6 @@ export default function Education() {
 
           {/* B.E. Card (span 5) */}
           <div className="lg:col-span-5 p-8 rounded-3xl glass glow-card border border-slate-800 flex flex-col justify-between group relative overflow-hidden h-full">
-            {/* Massive Background Year Graphic */}
-            <div className="absolute -right-6 -bottom-10 text-[9rem] sm:text-[12rem] font-black text-slate-900/15 group-hover:text-slate-900/25 select-none pointer-events-none font-sans transition-colors duration-500">
-              2022
-            </div>
-
             <div className="relative z-10">
               <div className="flex items-center justify-between mb-8">
                 <div className="p-3.5 rounded-2xl bg-slate-900 border border-slate-800 text-slate-300">
@@ -89,7 +79,7 @@ export default function Education() {
               </div>
             </div>
 
-            <div className="relative z-10 pt-6 mt-8 flex items-center justify-between">
+            <div className="relative z-10 pt-6 mt-8 border-t border-slate-800/60 flex items-center justify-between">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-900/60 border border-slate-800/80 text-xs font-bold text-white">
                 CGPA: 8.84/10
               </span>
