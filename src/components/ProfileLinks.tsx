@@ -42,7 +42,7 @@ export default function ProfileLinks() {
     <section id="profiles" className="py-24 relative overflow-hidden bg-slate-950/40">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* Section Heading */}
-        <div className="mb-10 text-center md:text-left">
+        <div className="mb-16 text-center md:text-left">
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
             Professional Profiles
           </h2>

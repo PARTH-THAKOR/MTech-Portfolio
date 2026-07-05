@@ -11,9 +11,11 @@ import MoreAboutMe from './components/MoreAboutMe';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AnimatedGridBackground from './components/AnimatedGridBackground';
+import IdCardModal from './components/IdCardModal';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
+  const [isIdCardModalOpen, setIsIdCardModalOpen] = useState(false);
 
   useEffect(() => {
     const sections = ['home', 'about', 'experience', 'projects', 'contact'];
@@ -52,7 +54,7 @@ function App() {
 
       {/* Page Body */}
       <main>
-        <Hero />
+        <Hero onOpenIdCard={() => setIsIdCardModalOpen(true)} />
         <About />
         <Education />
         <Experience />
@@ -65,6 +67,9 @@ function App() {
 
       {/* Footer */}
       <Footer />
+
+      {/* Interactive 3D ID Card Dialog Popup */}
+      <IdCardModal isOpen={isIdCardModalOpen} onClose={() => setIsIdCardModalOpen(false)} />
     </div>
   );
 }

@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 
-export default function Hero() {
+interface HeroProps {
+  onOpenIdCard: () => void;
+}
+
+export default function Hero({ onOpenIdCard }: HeroProps) {
   const roles = [
     'M.Tech CSE @ IIT Bombay',
     'Research Assistant',
@@ -84,13 +88,13 @@ export default function Hero() {
             <span>Explore</span>
             <ArrowRight className="w-4 h-4" />
           </a>
-          <a
-            href="#contact"
-            onClick={(e) => handleScrollTo(e, '#contact')}
-            className="w-44 sm:w-48 px-6 py-3 sm:py-3.5 rounded-xl text-sm font-semibold uppercase tracking-wider text-white bg-slate-950/80 hover:bg-slate-900 border border-slate-800 hover:border-slate-700 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2"
+          <button
+            onClick={onOpenIdCard}
+            className="w-44 sm:w-48 px-6 py-3 sm:py-3.5 rounded-xl text-sm font-semibold uppercase tracking-wider text-white bg-slate-950/80 hover:bg-slate-900 border border-slate-800 hover:border-slate-700 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-lg"
           >
-            <span>Get In Touch</span>
-          </a>
+            <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+            <span>Current ID</span>
+          </button>
         </div>
 
 
