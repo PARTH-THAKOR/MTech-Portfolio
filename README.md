@@ -24,9 +24,11 @@ A modern, dark-themed portfolio website designed with a monochromatic grayscale 
 ### Sections
 
 - **Hero** -- Introduction with typewriter role cycling and call-to-action buttons.
-- **About** -- Bio, education, academic achievements, and categorized technical skills.
+- **About** -- Bio, academic achievements, and categorized technical skills.
+- **Education** -- Premium bento grid layout detailing postgraduate and undergraduate studies with typographic year graphics.
 - **Experience** -- Timeline-based professional experience cards.
 - **Projects** -- Highlighted engineering and research projects with GitHub links.
+- **Achievements** -- 2x2 grid representing national exams and academic rank accomplishments.
 - **Profile Links** -- External links to GitHub, LinkedIn, LeetCode, and Medium.
 - **More About Me** -- LinkedIn call-to-action section.
 - **Contact** -- Direct email and current location cards.
@@ -59,8 +61,10 @@ Portfolio/
 │   ├── components/
 │   │   ├── AnimatedGridBackground.tsx
 │   │   ├── About.tsx
+│   │   ├── Education.tsx
 │   │   ├── Contact.tsx
 │   │   ├── Experience.tsx
+│   │   ├── Achievements.tsx
 │   │   ├── Footer.tsx
 │   │   ├── Header.tsx
 │   │   ├── Hero.tsx

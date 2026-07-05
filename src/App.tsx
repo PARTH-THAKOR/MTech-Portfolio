@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
+import Education from './components/Education';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
+import Achievements from './components/Achievements';
 import ProfileLinks from './components/ProfileLinks';
 import MoreAboutMe from './components/MoreAboutMe';
 import Contact from './components/Contact';
@@ -52,8 +54,10 @@ function App() {
       <main>
         <Hero />
         <About />
+        <Education />
         <Experience />
         <Projects />
+        <Achievements />
         <ProfileLinks />
         <MoreAboutMe />
         <Contact />

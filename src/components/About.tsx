@@ -1,4 +1,4 @@
-import { Award, GraduationCap, Server, Monitor, Shield, Database } from 'lucide-react';
+import { Award, Server, Monitor, Shield, Database } from 'lucide-react';
 
 export default function About() {
   const skillCategories = [
@@ -38,30 +38,21 @@ export default function About() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Left: Bio and Education cards */}
-          <div className="lg:col-span-6 space-y-8">
-            <p className="text-lg text-slate-300 leading-relaxed text-justify">
-              I am an M.Tech CSE student and Research Assistant at IIT Bombay with interests in Artificial Intelligence, Machine Learning, backend engineering, and distributed systems. I enjoy building scalable software, designing production-grade backend architectures, and applying AI to solve real-world problems.
-            </p>
-            <p className="text-slate-400 leading-relaxed text-justify">
-              My work spans machine learning, modern backend development. Alongside research, I build open-source projects and write technical articles on Medium covering software engineering and system design.
-            </p>
+          <div className="lg:col-span-6 flex flex-col justify-between">
+            <div className="space-y-8 mb-8">
+              <p className="text-lg text-slate-300 leading-relaxed text-justify">
+                I am an M.Tech CSE student and Research Assistant at IIT Bombay with interests in Artificial Intelligence, Machine Learning, backend engineering, and distributed systems. I enjoy building scalable software, designing production-grade backend architectures, and applying AI to solve real-world problems.
+              </p>
+              <p className="text-slate-400 leading-relaxed text-justify">
+                My work spans machine learning and modern backend development. Alongside research, I build open-source projects and write technical articles on Medium covering software engineering and system design.
+              </p>
+            </div>
 
             {/* Academic Highlights */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="p-6 rounded-2xl glass glow-card border border-slate-800 hover:border-slate-700 transition-all duration-300">
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800/80">
-                    <GraduationCap className="w-5 h-5 text-white" />
-                  </div>
-                  <h3 className="font-bold text-white text-base">Education</h3>
-                </div>
-                <h4 className="font-semibold text-slate-200 text-sm">M.Tech in Computer Science & Engineering at IIT Bombay</h4>
-                <p className="text-xs text-slate-500 mt-1">Research Assistant in the Web Team.</p>
-              </div>
-
-              <div className="p-6 rounded-2xl glass glow-card border border-slate-800 hover:border-slate-700 transition-all duration-300">
+            <div className="flex-1 flex">
+              <div className="p-6 rounded-2xl glass glow-card border border-slate-800 hover:border-slate-700 transition-all duration-300 w-full flex flex-col justify-center">
                 <div className="flex items-center space-x-3 mb-4">
                   <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800/80">
                     <Award className="w-5 h-5 text-slate-300" />
@@ -69,7 +60,8 @@ export default function About() {
                   <h3 className="font-bold text-white text-base">Academic Excellence</h3>
                 </div>
                 <h4 className="font-semibold text-slate-200 text-sm">All India Rank 342</h4>
-                <p className="text-xs text-slate-500 mt-1">Ranked in the top 0.16% nationally among 211k candidates.</p>
+                <h4 className="font-semibold text-slate-200 text-sm mt-0.5">GATE CS</h4>
+                <p className="text-xs text-slate-500 mt-1.5">Ranked in the top 0.16% nationally among 211k candidates.</p>
               </div>
             </div>
           </div>

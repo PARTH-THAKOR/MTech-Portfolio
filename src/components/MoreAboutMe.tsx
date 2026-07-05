@@ -2,7 +2,7 @@ import { Linkedin } from 'lucide-react';
 
 export default function MoreAboutMe() {
   return (
-    <section className="py-24 relative overflow-hidden bg-slate-950/20 border-t border-slate-900">
+    <section className="py-24 relative overflow-hidden bg-slate-950/20">
       {/* Background glow blobs */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-slate-900/5 blur-[120px] pointer-events-none" />
 

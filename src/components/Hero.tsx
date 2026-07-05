@@ -6,7 +6,7 @@ export default function Hero() {
     'M.Tech CSE @ IIT Bombay',
     'Research Assistant',
     'Backend Developer',
-    'Microservices Architect',
+    'Microservices Developer',
     'Applied Machine Learning',
     'Technical Writer @ Medium',
   ];
