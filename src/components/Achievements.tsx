@@ -70,7 +70,7 @@ export default function Achievements() {
                   </div>
 
                   {/* Card Container wrapper for Text Content Block */}
-                  <div className="flex-grow flex flex-col justify-between p-6 rounded-2xl bg-slate-950/55 backdrop-blur-xl glow-card border border-slate-800 relative z-10 transition-all duration-300">
+                  <div className="flex-grow flex flex-col justify-between p-6 rounded-2xl glass glow-card border border-slate-800 relative z-10 transition-all duration-300">
                     <div className="space-y-3 mb-6">
                       <div>
                         <h3 className="text-lg font-bold text-white transition-colors">
