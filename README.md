@@ -2,7 +2,7 @@
 
 Personal portfolio website built with React, TypeScript, Tailwind CSS, and Vite. Deployed on Firebase Hosting.
 
-Live: [parthsinh.web.app](https://paraglide.in)
+Live: [paraglide.in](https://paraglide.in)
 
 ---
 
