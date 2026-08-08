@@ -1,4 +1,4 @@
-import { Github, Linkedin, BookOpen, ExternalLink } from 'lucide-react';
+import { Github, Linkedin, BookOpen, ArrowUpRight, GraduationCap } from 'lucide-react';
 
 const LeetCodeIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
@@ -21,6 +21,13 @@ export default function ProfileLinks() {
       url: 'https://linkedin.com/in/parthsinh-thakor',
       username: 'parthsinh-thakor',
       description: 'Professional networking, updates, and career connections.'
+    },
+    {
+      name: 'IIT Bombay',
+      icon: <GraduationCap className="w-5 h-5 text-white" />,
+      url: 'https://www.cse.iitb.ac.in/~parthsinh',
+      username: '~parthsinh',
+      description: 'Academic profile, Systems Research, and projects at CSE IIT Bombay.'
     },
     {
       name: 'LeetCode',
@@ -49,22 +56,22 @@ export default function ProfileLinks() {
         </div>
 
         {/* Profiles Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="flex flex-wrap justify-center gap-6">
           {profiles.map((profile) => (
-            <a
-              key={profile.name}
-              href={profile.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-6 rounded-2xl glass glow-card border border-slate-800 hover:border-slate-700 transition-all duration-300 flex flex-col justify-between group h-full relative"
-            >
+            <div key={profile.name} className="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <a
+                href={profile.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-6 rounded-2xl glass glow-card border border-slate-800 hover:border-slate-700 transition-all duration-300 flex flex-col justify-between group h-full relative block"
+              >
               <div>
                 {/* Header */}
                 <div className="flex items-center justify-between mb-4">
                   <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 group-hover:text-white transition-colors">
                     {profile.icon}
                   </div>
-                  <ExternalLink className="w-4 h-4 text-slate-500 group-hover:text-white transition-colors" />
+                  <ArrowUpRight className="w-5 h-5 text-slate-500 group-hover:text-white transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
                 </div>
 
                 {/* Info */}
@@ -78,7 +85,8 @@ export default function ProfileLinks() {
                   {profile.description}
                 </p>
               </div>
-            </a>
+              </a>
+            </div>
           ))}
         </div>
       </div>

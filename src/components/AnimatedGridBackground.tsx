@@ -13,27 +13,33 @@ const AnimatedGridBackground = () => {
     let width = 0;
     let height = 0;
     
-    // Grid configuration
-    const gridSize = 64; // 4rem = 64px
-    let cols = 0;
-    let rows = 0;
-    let cells: { x: number; y: number; alpha: number; targetAlpha: number; speed: number; color: string; }[] = [];
-    let idleIndices: number[] = [];
+    // Laser configuration
+    const laserCount = 150; // Number of lasers on screen
+    let lasers: { x: number; y: number; length: number; speed: number; color: string; alpha: number; thickness: number; }[] = [];
+    
+    const colors = [
+      '59, 130, 246', // Blue
+      '139, 92, 246', // Purple
+      '236, 72, 153', // Pink
+      '16, 185, 129'  // Emerald
+    ];
 
-    const refillIdleIndices = () => {
-      idleIndices = Array.from({ length: cells.length }, (_, i) => i);
-      // Fisher-Yates shuffle
-      for (let i = idleIndices.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [idleIndices[i], idleIndices[j]] = [idleIndices[j], idleIndices[i]];
-      }
+    const createLaser = (resetY: boolean = false) => {
+      return {
+        x: Math.random() * width,
+        y: resetY ? -Math.random() * 500 - 100 : Math.random() * height,
+        length: Math.random() * 200 + 50,
+        speed: Math.random() * 4 + 2,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        alpha: Math.random() * 0.4 + 0.1,
+        thickness: Math.random() * 1.5 + 0.5
+      };
     };
 
     const resize = () => {
       width = window.innerWidth;
       height = window.innerHeight;
       
-      // Handle high DPI displays for crisp rendering
       const dpr = window.devicePixelRatio || 1;
       canvas.width = width * dpr;
       canvas.height = height * dpr;
@@ -41,102 +47,46 @@ const AnimatedGridBackground = () => {
       canvas.style.width = `${width}px`;
       canvas.style.height = `${height}px`;
       
-      cols = Math.ceil(width / gridSize);
-      rows = Math.ceil(height / gridSize);
-      
-      cells = [];
-      for (let i = 0; i < cols; i++) {
-        for (let j = 0; j < rows; j++) {
-          cells.push({
-            x: i,
-            y: j,
-            alpha: 0,
-            targetAlpha: 0,
-            speed: 0,
-            color: '255, 255, 255'
-          });
-        }
+      lasers = [];
+      for (let i = 0; i < laserCount; i++) {
+        lasers.push(createLaser());
       }
-      refillIdleIndices();
     };
 
     window.addEventListener('resize', resize);
     resize();
 
-    let lastTime = 0;
-    let timeAccumulator = 0;
-    
-    // 30 seconds (30000ms) to cover all cells.
-    const getActivationInterval = () => 30000 / Math.max(1, cells.length);
-
-    const draw = (time: number) => {
-      if (!lastTime) lastTime = time;
-      const deltaTime = time - lastTime;
-      lastTime = time;
-
+    const draw = () => {
       ctx.clearRect(0, 0, width, height);
 
-      // Draw grid lines
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
-      ctx.lineWidth = 1;
-      ctx.beginPath();
-      for (let i = 0; i <= cols; i++) {
-        ctx.moveTo(i * gridSize, 0);
-        ctx.lineTo(i * gridSize, height);
-      }
-      for (let j = 0; j <= rows; j++) {
-        ctx.moveTo(0, j * gridSize);
-        ctx.lineTo(width, j * gridSize);
-      }
-      ctx.stroke();
+      lasers.forEach(laser => {
+        laser.y += laser.speed;
 
-      // Determine activations
-      const activationInterval = getActivationInterval();
-      timeAccumulator += deltaTime;
-      
-      // While we have enough accumulated time, activate cells
-      while (timeAccumulator > activationInterval) {
-        timeAccumulator -= activationInterval;
+        // Reset laser if it goes off screen
+        if (laser.y - laser.length > height) {
+          Object.assign(laser, createLaser(true));
+        }
+
+        // Draw laser with gradient
+        const gradient = ctx.createLinearGradient(laser.x, laser.y - laser.length, laser.x, laser.y);
+        gradient.addColorStop(0, `rgba(${laser.color}, 0)`);
+        gradient.addColorStop(0.8, `rgba(${laser.color}, ${laser.alpha})`);
+        gradient.addColorStop(1, `rgba(255, 255, 255, ${laser.alpha * 1.5})`); // Bright tip
+
+        ctx.beginPath();
+        ctx.strokeStyle = gradient;
+        ctx.lineWidth = laser.thickness;
+        ctx.lineCap = 'round';
+        ctx.moveTo(laser.x, laser.y - laser.length);
+        ctx.lineTo(laser.x, laser.y);
+        ctx.stroke();
         
-        if (cells.length > 0) {
-          if (idleIndices.length === 0) {
-            refillIdleIndices();
-          }
-          
-          const activeIndex = idleIndices.pop();
-          if (activeIndex !== undefined) {
-            const cell = cells[activeIndex];
-            // Only activate if it's currently inactive
-            if (cell.targetAlpha === 0 && cell.alpha === 0) {
-              cell.targetAlpha = (Math.random() * 0.13) + 0.05; // max alpha between 0.05 and 0.18
-              cell.speed = (Math.random() * 0.003) + 0.001; // fade speed
-              const dimColors = ['239, 68, 68', '59, 130, 246', '234, 179, 8', '249, 115, 22', '34, 197, 94'];
-              cell.color = dimColors[Math.floor(Math.random() * dimColors.length)];
-            }
-          }
-        }
-      }
-
-      // Update and draw cells
-      for (let i = 0; i < cells.length; i++) {
-        const cell = cells[i];
-        
-        if (cell.alpha < cell.targetAlpha) {
-          cell.alpha = Math.min(cell.targetAlpha, cell.alpha + cell.speed);
-          if (cell.alpha === cell.targetAlpha) {
-            // Reached max alpha, start fading out immediately
-            cell.targetAlpha = 0;
-            cell.speed = (Math.random() * 0.002) + 0.0005; // slower fade out
-          }
-        } else if (cell.alpha > cell.targetAlpha) {
-          cell.alpha = Math.max(cell.targetAlpha, cell.alpha - cell.speed);
-        }
-
-        if (cell.alpha > 0) {
-          ctx.fillStyle = `rgba(${cell.color}, ${cell.alpha})`;
-          ctx.fillRect(cell.x * gridSize, cell.y * gridSize, gridSize, gridSize);
-        }
-      }
+        // Add glow to the tip
+        ctx.beginPath();
+        ctx.arc(laser.x, laser.y, laser.thickness * 1.2, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${laser.alpha * 1.5})`;
+        ctx.fill();
+      });
 
       animationFrameId = requestAnimationFrame(draw);
     };
@@ -152,7 +102,7 @@ const AnimatedGridBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0"
+      className="fixed inset-0 pointer-events-none z-0 opacity-60"
     />
   );
 };

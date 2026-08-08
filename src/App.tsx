@@ -8,6 +8,7 @@ import Projects from './components/Projects';
 import Achievements from './components/Achievements';
 import ProfileLinks from './components/ProfileLinks';
 import MoreAboutMe from './components/MoreAboutMe';
+import Extracurriculars from './components/Extracurriculars';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AnimatedGridBackground from './components/AnimatedGridBackground';
@@ -61,6 +62,7 @@ function App() {
         <Projects />
         <Achievements />
         <ProfileLinks />
+        <Extracurriculars />
         <MoreAboutMe />
         <Contact />
       </main>
