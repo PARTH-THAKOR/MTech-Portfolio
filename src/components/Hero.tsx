@@ -11,7 +11,7 @@ export default function Hero({ onOpenIdCard }: HeroProps) {
     'Research Assistant',
     'Backend Developer',
     'Microservices Developer',
-    'Applied Machine Learning',
+    'Distributed Systems',
     'Technical Writer @ Medium',
   ];
 

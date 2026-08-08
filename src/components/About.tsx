@@ -3,9 +3,9 @@ import { Award, Server, Monitor, Shield, Database } from 'lucide-react';
 export default function About() {
   const skillCategories = [
     {
-      title: 'Research Interests',
+      title: 'Systems & Architecture',
       icon: <Shield className="w-5 h-5 text-white" />,
-      skills: ['Artificial Intelligence', 'Machine Learning', 'Backend Engineering', 'Distributed Systems', 'Large Language Models (LLMs)']
+      skills: ['Computing Systems', 'Operating Systems', 'Backend Engineering', 'Distributed Systems', 'Systems Architecture']
     },
     {
       title: 'Backend & Systems',
@@ -43,10 +43,10 @@ export default function About() {
           <div className="lg:col-span-6 flex flex-col justify-between">
             <div className="space-y-8 mb-8">
               <p className="text-lg text-slate-300 leading-relaxed text-justify">
-                I am an M.Tech CSE student and Research Assistant at IIT Bombay with interests in Artificial Intelligence, Machine Learning, backend engineering, and distributed systems. I enjoy building scalable software, designing production-grade backend architectures, and applying AI to solve real-world problems.
+                I am an M.Tech CSE student and Research Assistant at IIT Bombay with interests in Computing systems, operating systems, backend engineering, and distributed systems. I enjoy building scalable high-performance software, designing production-grade backend architectures, and optimizing system bottlenecks.
               </p>
               <p className="text-slate-400 leading-relaxed text-justify">
-                My work spans machine learning and modern backend development. Alongside research, I build open-source projects and write technical articles on Medium covering software engineering and system design.
+                My work focuses on systems research, performance optimization, and modern backend development. Alongside research, I build open-source projects and write technical articles on Medium covering software engineering and system design.
               </p>
             </div>
 
