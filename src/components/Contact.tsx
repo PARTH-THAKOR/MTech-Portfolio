@@ -29,7 +29,7 @@ export default function Contact() {
                   <Mail className="w-6 h-6" />
                 </div>
                 <a
-                  href="mailto:parthsinh@cse.iitb.ac.in"
+                  href="mailto:parth@paraglide.in"
                   className="p-2.5 rounded-lg bg-slate-900 hover:bg-slate-850 hover:text-white text-slate-400 border border-slate-800 transition-all active:scale-95 flex items-center gap-1.5 text-xs font-semibold"
                   title="Send Mail"
                 >
@@ -43,10 +43,10 @@ export default function Contact() {
               </p>
             </div>
             <a
-              href="mailto:parthsinh@cse.iitb.ac.in"
+              href="mailto:parth@paraglide.in"
               className="text-lg font-bold text-white hover:text-slate-300 transition-colors inline-flex items-center gap-1.5 self-start group/link"
             >
-              <span>parthsinh@cse.iitb.ac.in</span>
+              <span>parth@paraglide.in</span>
             </a>
           </div>
 
