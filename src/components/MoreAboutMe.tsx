@@ -11,7 +11,7 @@ export default function MoreAboutMe() {
           Want to know more about me?
         </h2>
         <p className="text-slate-400 text-base sm:text-lg mt-4 max-w-xl mx-auto text-center leading-relaxed">
-          Let's connect on LinkedIn to dive deeper into my professional journey, research at IIT Bombay, software engineering projects, or to discuss collaborative backend and AI/ML ideas.
+          Let's connect on LinkedIn to dive deeper into my professional journey, research at IIT Bombay, software engineering projects, or to discuss collaborative backend or any systems related ideas.
         </p>
         <div className="mt-8 flex justify-center">
           <a
