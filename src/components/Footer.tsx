@@ -12,8 +12,7 @@ export default function Footer() {
   return (
     <footer className="relative py-12 border-t border-slate-800/60 bg-slate-950/20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-row items-center justify-between gap-6 relative z-10">
-        
-        {/* Brand & Copyright */}
+
         <div className="text-left">
           <p className="text-sm font-bold tracking-tight text-white">
             Parthsinh Thakor
@@ -23,7 +22,6 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Back to top button */}
         <button
           onClick={scrollToTop}
           className="p-3 rounded-xl bg-slate-900 hover:bg-slate-850 hover:text-white text-slate-400 border border-slate-800 transition-all hover:-translate-y-1 active:scale-95 group"

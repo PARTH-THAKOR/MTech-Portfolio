@@ -48,14 +48,13 @@ export default function ProfileLinks() {
   return (
     <section id="profiles" className="py-24 relative overflow-hidden bg-slate-950/40">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        {/* Section Heading */}
+
         <div className="mb-16 text-center md:text-left">
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
             Professional Profiles
           </h2>
         </div>
 
-        {/* Profiles Grid */}
         <div className="flex flex-wrap justify-center gap-6">
           {profiles.map((profile) => (
             <div key={profile.name} className="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
@@ -66,7 +65,7 @@ export default function ProfileLinks() {
                 className="p-6 rounded-2xl glass glow-card border border-slate-800 hover:border-slate-700 transition-all duration-300 flex flex-col justify-between group h-full relative block"
               >
               <div>
-                {/* Header */}
+
                 <div className="flex items-center justify-between mb-4">
                   <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 group-hover:text-white transition-colors">
                     {profile.icon}
@@ -74,7 +73,6 @@ export default function ProfileLinks() {
                   <ArrowUpRight className="w-5 h-5 text-slate-500 group-hover:text-white transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
                 </div>
 
-                {/* Info */}
                 <h3 className="text-lg font-bold text-white group-hover:text-slate-300 transition-colors">
                   {profile.name}
                 </h3>

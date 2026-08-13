@@ -4,12 +4,12 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-24 relative overflow-hidden bg-slate-950/20">
-      {/* Glow Backdrops */}
+
       <div className="absolute bottom-0 right-10 w-96 h-96 rounded-full bg-slate-900/5 blur-[120px] pointer-events-none" />
       <div className="absolute top-10 left-10 w-96 h-96 rounded-full bg-slate-900/5 blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        {/* Section Heading */}
+
         <div className="mb-16 text-center">
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
             Get In Touch
@@ -19,9 +19,8 @@ export default function Contact() {
           </p>
         </div>
 
-        {/* Contact Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {/* Email Card */}
+
           <div className="p-8 rounded-2xl glass glow-card border border-slate-800 flex flex-col justify-between group h-full">
             <div>
               <div className="flex items-center justify-between mb-6">
@@ -50,7 +49,6 @@ export default function Contact() {
             </a>
           </div>
 
-          {/* Location Card */}
           <div className="p-8 rounded-2xl glass glow-card border border-slate-800 flex flex-col justify-between group h-full">
             <div>
               <div className="flex items-center mb-6">

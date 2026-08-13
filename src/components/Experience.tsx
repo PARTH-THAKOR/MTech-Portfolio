@@ -52,21 +52,19 @@ export default function Experience() {
   return (
     <section id="experience" className="py-24 relative overflow-hidden bg-slate-950/20">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        {/* Section Heading */}
+
         <div className="mb-16 text-center md:text-left">
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
             Professional Experience
           </h2>
         </div>
 
-        {/* Timeline Layout */}
         <div className="relative border-l border-slate-800 ml-4 md:ml-6 space-y-12">
           {experiences.map((exp, index) => (
             <div key={index} className="relative pl-8 md:pl-10 group">
-              {/* Timeline dot */}
+
               <span className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-950 border-2 border-slate-700 group-hover:border-white transition-colors duration-300" />
 
-              {/* Experience Card */}
               <div className="p-6 md:p-8 rounded-2xl glass glow-card border border-slate-800 transition-all duration-300">
                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">
                   <div className="flex items-start gap-3">

@@ -30,7 +30,7 @@ export default function Header({ activeSection }: HeaderProps) {
     setIsOpen(false);
     const target = document.querySelector(href);
     if (target) {
-      const offset = 80; // height of header
+      const offset = 80; 
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = target.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
@@ -48,7 +48,6 @@ export default function Header({ activeSection }: HeaderProps) {
       }`}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-end md:justify-between items-center">
 
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center p-1.5 space-x-1 bg-slate-950/45 backdrop-blur-md border border-slate-800/60 rounded-full shadow-inner shadow-white/5">
           {navItems.map((item) => {
             const isActive = activeSection === item.href.slice(1);
@@ -69,7 +68,6 @@ export default function Header({ activeSection }: HeaderProps) {
           })}
         </nav>
 
-        {/* Social Icons & Actions */}
         <div className="hidden md:flex items-center space-x-4">
           <a
             href="https://github.com/PARTH-THAKOR"
@@ -98,7 +96,6 @@ export default function Header({ activeSection }: HeaderProps) {
           </a>
         </div>
 
-        {/* Mobile Menu Toggle */}
         <div className="flex md:hidden items-center space-x-3">
           <a
             href="#contact"
@@ -117,7 +114,6 @@ export default function Header({ activeSection }: HeaderProps) {
         </div>
       </div>
 
-      {/* Mobile Sidebar Overlay */}
       <div className={`fixed inset-0 top-[72px] z-40 bg-slate-950/95 backdrop-blur-lg border-t border-slate-800 transition-all duration-300 md:hidden ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}>
         <nav className="flex flex-col p-8 space-y-6">

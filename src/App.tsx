@@ -22,7 +22,7 @@ function App() {
     const sections = ['home', 'about', 'experience', 'projects', 'contact'];
 
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 160; // Offset for sticky navbar
+      const scrollPosition = window.scrollY + 160; 
 
       for (const section of sections) {
         const el = document.getElementById(section);
@@ -38,7 +38,7 @@ function App() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    // Initial call to set active section on load
+
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
@@ -46,14 +46,12 @@ function App() {
 
   return (
     <div className="bg-slate-950 text-slate-100 min-h-screen relative font-sans selection:bg-white/10 selection:text-white overflow-hidden">
-      {/* Global Grid Pattern Background */}
+
       <AnimatedGridBackground />
       <div className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-slate-900/5 blur-[150px] pointer-events-none" />
 
-      {/* Navigation bar */}
       <Header activeSection={activeSection} />
 
-      {/* Page Body */}
       <main>
         <Hero onOpenIdCard={() => setIsIdCardModalOpen(true)} />
         <About />
@@ -67,10 +65,8 @@ function App() {
         <Contact />
       </main>
 
-      {/* Footer */}
       <Footer />
 
-      {/* Interactive 3D ID Card Dialog Popup */}
       <IdCardModal isOpen={isIdCardModalOpen} onClose={() => setIsIdCardModalOpen(false)} />
     </div>
   );

@@ -3,20 +3,19 @@ import { GraduationCap, Calendar, Landmark } from 'lucide-react';
 export default function Education() {
   return (
     <section id="education" className="py-24 relative overflow-hidden bg-slate-950/20">
-      {/* Background glow */}
+
       <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-slate-900/5 blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        {/* Section Heading */}
+
         <div className="mb-16 text-center md:text-left">
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
             Education
           </h2>
         </div>
 
-        {/* Bento Asymmetrical Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          {/* M.Tech Card - Prominent (span 7) */}
+
           <div className="lg:col-span-7 p-8 rounded-3xl glass glow-card border border-slate-800 flex flex-col justify-between group relative overflow-hidden h-full">
             <div className="relative z-10">
               <div className="flex items-center justify-between mb-8">
@@ -52,7 +51,6 @@ export default function Education() {
             </div>
           </div>
 
-          {/* B.E. Card (span 5) */}
           <div className="lg:col-span-5 p-8 rounded-3xl glass glow-card border border-slate-800 flex flex-col justify-between group relative overflow-hidden h-full">
             <div className="relative z-10">
               <div className="flex items-center justify-between mb-8">

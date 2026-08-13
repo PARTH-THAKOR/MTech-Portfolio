@@ -33,7 +33,7 @@ export default function Extracurriculars() {
                 </p>
               </div>
             </div>
-            
+
             <div className="absolute top-4 sm:top-6 right-4 sm:right-6 p-2 text-slate-600 group-hover:text-white transition-colors">
               <ArrowUpRight className="w-5 h-5 sm:w-6 sm:h-6 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform duration-300" />
             </div>

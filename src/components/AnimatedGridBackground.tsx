@@ -12,16 +12,15 @@ const AnimatedGridBackground = () => {
     let animationFrameId: number;
     let width = 0;
     let height = 0;
-    
-    // Laser configuration
-    const laserCount = 150; // Number of lasers on screen
+
+    const laserCount = 150; 
     let lasers: { x: number; y: number; length: number; speed: number; color: string; alpha: number; thickness: number; }[] = [];
-    
+
     const colors = [
-      '59, 130, 246', // Blue
-      '139, 92, 246', // Purple
-      '236, 72, 153', // Pink
-      '16, 185, 129'  // Emerald
+      '59, 130, 246', 
+      '139, 92, 246', 
+      '236, 72, 153', 
+      '16, 185, 129'  
     ];
 
     const createLaser = (resetY: boolean = false) => {
@@ -39,14 +38,14 @@ const AnimatedGridBackground = () => {
     const resize = () => {
       width = window.innerWidth;
       height = window.innerHeight;
-      
+
       const dpr = window.devicePixelRatio || 1;
       canvas.width = width * dpr;
       canvas.height = height * dpr;
       ctx.scale(dpr, dpr);
       canvas.style.width = `${width}px`;
       canvas.style.height = `${height}px`;
-      
+
       lasers = [];
       for (let i = 0; i < laserCount; i++) {
         lasers.push(createLaser());
@@ -62,16 +61,14 @@ const AnimatedGridBackground = () => {
       lasers.forEach(laser => {
         laser.y += laser.speed;
 
-        // Reset laser if it goes off screen
         if (laser.y - laser.length > height) {
           Object.assign(laser, createLaser(true));
         }
 
-        // Draw laser with gradient
         const gradient = ctx.createLinearGradient(laser.x, laser.y - laser.length, laser.x, laser.y);
         gradient.addColorStop(0, `rgba(${laser.color}, 0)`);
         gradient.addColorStop(0.8, `rgba(${laser.color}, ${laser.alpha})`);
-        gradient.addColorStop(1, `rgba(255, 255, 255, ${laser.alpha * 1.5})`); // Bright tip
+        gradient.addColorStop(1, `rgba(255, 255, 255, ${laser.alpha * 1.5})`); 
 
         ctx.beginPath();
         ctx.strokeStyle = gradient;
@@ -80,8 +77,7 @@ const AnimatedGridBackground = () => {
         ctx.moveTo(laser.x, laser.y - laser.length);
         ctx.lineTo(laser.x, laser.y);
         ctx.stroke();
-        
-        // Add glow to the tip
+
         ctx.beginPath();
         ctx.arc(laser.x, laser.y, laser.thickness * 1.2, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(255, 255, 255, ${laser.alpha * 1.5})`;

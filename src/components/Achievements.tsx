@@ -38,38 +38,34 @@ export default function Achievements() {
 
   return (
     <section id="achievements" className="py-24 relative overflow-hidden bg-slate-950/20">
-      {/* Background glow */}
+
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-slate-900/5 blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        {/* Section Heading */}
+
         <div className="mb-20 text-center lg:text-left">
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
             Achievements
           </h2>
         </div>
 
-        {/* Timeline Track */}
         <div className="relative">
-          {/* Desktop Connecting horizontal dashed line */}
+
           <div className="hidden lg:block absolute top-7 left-8 right-8 h-[1px] border-t border-dashed border-slate-800 z-0" />
-          
-          {/* Mobile/Tablet Connecting vertical dashed line */}
+
           <div className="block lg:hidden absolute top-6 bottom-6 left-6 w-[1px] border-l border-dashed border-slate-800 z-0" />
 
-          {/* Steps flex container */}
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-6 relative z-10">
             {achievements.map((item, idx) => {
               return (
                 <div key={idx} className="flex lg:flex-col gap-6 lg:gap-0 relative group h-full justify-between">
-                  {/* Timeline Node Point */}
+
                   <div className="flex lg:justify-start items-center mb-6 shrink-0 relative">
                     <div className="w-12 h-12 rounded-full bg-slate-950 border border-slate-800 text-slate-400 flex items-center justify-center font-bold ring-4 ring-slate-900 relative z-10 transition-transform duration-300 group-hover:scale-110 group-hover:border-slate-650 group-hover:text-white">
                       {item.icon}
                     </div>
                   </div>
 
-                  {/* Card Container wrapper for Text Content Block */}
                   <div className="flex-grow flex flex-col justify-between p-6 rounded-2xl glass glow-card border border-slate-800 relative z-10 transition-all duration-300">
                     <div className="space-y-3 mb-6">
                       <div>
@@ -89,7 +85,6 @@ export default function Achievements() {
                       </p>
                     </div>
 
-                    {/* Tags */}
                     <div className="flex flex-wrap gap-1.5 pt-4 border-t border-slate-900/40">
                       {item.tags.map((tag) => (
                         <span

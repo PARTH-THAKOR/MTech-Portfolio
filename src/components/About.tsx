@@ -3,9 +3,9 @@ import { Award, Server, Monitor, Shield, Database } from 'lucide-react';
 export default function About() {
   const skillCategories = [
     {
-      title: 'Systems & Architecture',
+      title: 'Areas of Interest',
       icon: <Shield className="w-5 h-5 text-white" />,
-      skills: ['Computing Systems', 'Operating Systems', 'Backend Engineering', 'Distributed Systems', 'Systems Architecture']
+      skills: ['Computing Systems', 'Operating Systems', 'Cloud Computing', 'Distributed Systems', 'Systems Architecture']
     },
     {
       title: 'Backend & Systems',
@@ -26,20 +26,20 @@ export default function About() {
 
   return (
     <section id="about" className="py-24 relative overflow-hidden">
-      {/* Decorative gradient lines */}
+
       <div className="absolute top-1/2 left-0 w-1/4 h-0.5 bg-gradient-to-r from-slate-500/10 to-transparent" />
       <div className="absolute top-1/3 right-0 w-1/4 h-0.5 bg-gradient-to-l from-slate-500/10 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        {/* Section Heading */}
+
         <div className="mb-16 text-center md:text-left">
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
-            Academic Research & Systems Engineering
+            About Me
           </h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Left: Bio and Education cards */}
+
           <div className="lg:col-span-6 flex flex-col justify-between">
             <div className="space-y-8 mb-8">
               <p className="text-lg text-slate-300 leading-relaxed text-justify">
@@ -50,7 +50,6 @@ export default function About() {
               </p>
             </div>
 
-            {/* Academic Highlights */}
             <div className="flex-1 flex">
               <div className="p-6 rounded-2xl glass glow-card border border-slate-800 hover:border-slate-700 transition-all duration-300 w-full flex flex-col justify-center">
                 <div className="flex items-center space-x-3 mb-4">
@@ -66,7 +65,6 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right: Technical Skills */}
           <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
             {skillCategories.map((category) => (
               <div key={category.title} className="p-6 rounded-2xl glass glow-card border border-slate-800">

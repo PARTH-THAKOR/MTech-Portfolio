@@ -43,26 +43,25 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-24 relative overflow-hidden bg-slate-950/40">
-      {/* Background glow */}
+
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-slate-900/5 blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        {/* Section Heading */}
+
         <div className="mb-16 text-center md:text-left">
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
-            Research Projects & Engineering Work
+            Projects & Engineering Work
           </h2>
         </div>
 
-        {/* Featured Project Card (Rollout.io) */}
         <div className="p-8 md:p-12 rounded-3xl glass glow-card border border-slate-800 flex flex-col lg:flex-row gap-12 items-center mb-12 relative overflow-hidden group">
-          {/* Main Info (Left) */}
+
           <div className="flex-1 space-y-6">
             <div className="flex items-center justify-between">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-white">
                 Featured Highlight
               </span>
-              
+
               <div className="flex space-x-2">
                 <a
                   href={featuredProject.github}
@@ -88,7 +87,6 @@ export default function Projects() {
               </p>
             </div>
 
-            {/* Tags */}
             <div className="flex flex-wrap gap-2 pt-4 border-t border-slate-800/60">
               {featuredProject.tech.map((t) => (
                 <span
@@ -101,9 +99,8 @@ export default function Projects() {
             </div>
           </div>
 
-          {/* Interactive Console Mockup (Right) */}
           <div className="w-full lg:w-[380px] shrink-0 p-5 rounded-2xl bg-slate-950/80 border border-slate-850 font-mono text-xs select-none pointer-events-none shadow-2xl relative overflow-hidden">
-            {/* Header */}
+
             <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-850/60">
               <div className="flex items-center gap-1.5">
                 <div className="w-2.5 h-2.5 rounded-full bg-slate-800" />
@@ -112,8 +109,7 @@ export default function Projects() {
               </div>
               <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Targeting Engine</span>
             </div>
-            
-            {/* Feature Flag Row 1 */}
+
             <div className="space-y-4">
               <div className="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/60 border border-slate-850">
                 <div>
@@ -128,7 +124,6 @@ export default function Projects() {
                 </div>
               </div>
 
-              {/* Feature Flag Row 2 - Percentage Rollout */}
               <div className="p-3 rounded-lg bg-slate-900/60 border border-slate-850 space-y-3">
                 <div className="flex items-center justify-between">
                   <div>
@@ -137,13 +132,12 @@ export default function Projects() {
                   </div>
                   <span className="text-[10px] font-extrabold text-white">45% ROLLOUT</span>
                 </div>
-                {/* Progress Bar Visual */}
+
                 <div className="w-full h-1.5 rounded-full bg-slate-800 overflow-hidden">
                   <div className="w-[45%] h-full bg-white rounded-full" />
                 </div>
               </div>
 
-              {/* Live Console Output Simulation */}
               <div className="p-3 rounded-lg bg-slate-900/40 border border-slate-850/50 text-[10px] text-slate-500 space-y-1">
                 <span className="block text-slate-400 font-bold mb-1">Targeting Rules JSON:</span>
                 <p className="text-slate-500 font-semibold">{`{`}</p>
@@ -155,7 +149,6 @@ export default function Projects() {
           </div>
         </div>
 
-        {/* Other Projects Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {otherProjects.map((project) => (
             <div
@@ -163,7 +156,7 @@ export default function Projects() {
               className="p-6 rounded-2xl glass glow-card border border-slate-800 flex flex-col justify-between group"
             >
               <div>
-                {/* Header */}
+
                 <div className="flex items-center justify-between mb-6">
                   <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800">
                     {project.icon}
@@ -181,7 +174,6 @@ export default function Projects() {
                   </div>
                 </div>
 
-                {/* Info */}
                 <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
                   {project.subtitle}
                 </span>
@@ -193,7 +185,6 @@ export default function Projects() {
                 </p>
               </div>
 
-              {/* Tags */}
               <div className="flex flex-wrap gap-1.5 pt-4 border-t border-slate-800">
                 {project.tech.map((t) => (
                   <span
