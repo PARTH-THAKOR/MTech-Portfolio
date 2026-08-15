@@ -52,7 +52,7 @@
   html {
     scroll-behavior: smooth;
     font-family: 'Inter', sans-serif;
-    scrollbar-color: #182852 #040814;
+    scrollbar-color: var(--tw-slate-800) var(--tw-slate-950);
     scrollbar-width: thin;
   }
 

@@ -12,11 +12,11 @@ import Extracurriculars from './components/Extracurriculars';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AnimatedGridBackground from './components/AnimatedGridBackground';
-import IdCardModal from './components/IdCardModal';
+import TerminalModal from './components/TerminalModal';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
-  const [isIdCardModalOpen, setIsIdCardModalOpen] = useState(false);
+  const [isTerminalOpen, setIsTerminalOpen] = useState(false);
 
   useEffect(() => {
     const sections = ['home', 'about', 'experience', 'projects', 'contact'];
@@ -53,7 +53,7 @@ function App() {
       <Header activeSection={activeSection} />
 
       <main>
-        <Hero onOpenIdCard={() => setIsIdCardModalOpen(true)} />
+        <Hero onOpenTerminal={() => setIsTerminalOpen(true)} />
         <About />
         <Education />
         <Experience />
@@ -67,7 +67,7 @@ function App() {
 
       <Footer />
 
-      <IdCardModal isOpen={isIdCardModalOpen} onClose={() => setIsIdCardModalOpen(false)} />
+      <TerminalModal isOpen={isTerminalOpen} onClose={() => setIsTerminalOpen(false)} />
     </div>
   );
 }

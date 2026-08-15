@@ -1,19 +1,19 @@
 import { useState, useEffect } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Terminal as TerminalIcon } from 'lucide-react';
 
 interface HeroProps {
-  onOpenIdCard: () => void;
+  onOpenTerminal: () => void;
 }
 
-export default function Hero({ onOpenIdCard }: HeroProps) {
-  const roles = [
-    'M.Tech CSE @ IIT Bombay',
-    'Backend Developer',
-    'Microservices Developer',
-    'Distributed Systems',
-    'Technical Writer @ Medium',
-  ];
+const roles = [
+  'M.Tech CSE @ IIT Bombay',
+  'Backend Developer',
+  'Microservices Developer',
+  'Distributed Systems',
+  'Technical Writer @ Medium',
+];
 
+export default function Hero({ onOpenTerminal }: HeroProps) {
   const [roleIndex, setRoleIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
@@ -83,11 +83,11 @@ export default function Hero({ onOpenIdCard }: HeroProps) {
             <ArrowRight className="w-4 h-4" />
           </a>
           <button
-            onClick={onOpenIdCard}
+            onClick={onOpenTerminal}
             className="w-44 sm:w-48 px-6 py-3 sm:py-3.5 rounded-xl text-sm font-semibold uppercase tracking-wider text-white bg-slate-950/80 hover:bg-slate-900 border border-slate-800 hover:border-slate-700 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-lg"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-            <span>Current ID</span>
+            <TerminalIcon className="w-4 h-4 text-slate-400" />
+            <span>Terminal</span>
           </button>
         </div>
 
